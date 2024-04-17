@@ -4,7 +4,11 @@
     display: flex;
     align-items: center;
 }
-
+@include abstracts.breakpoint(lg) {
+    .d-lg-none{
+        display: none;
+    }
+}
 .header {
     position: relative;
     z-index: 2;
@@ -28,7 +32,12 @@
         justify-content: space-between;
         padding: 16px 0;
     }
-
+    &__more{
+        display: none;
+        @include abstracts.breakpoint(lg) {
+            display: block;
+        }
+    }
     &__logo {
         @include abstracts.breakpoint(lg) {
             gap: 10px !important;
@@ -64,20 +73,16 @@
         position: fixed;
         inset: 0 50% 0 0;
         z-index: 9;
-
         margin-left: 0;
         padding: 20px 0;
         border-radius: 0px 20px 20px 0px;
         background: var(--sidebar-bg);
-
         translate: -100%;
         transition: translate 0.5s;
-
         &.show {
             translate: 0;
             box-shadow: 0px 40px 90px 20px var(--sidebar-shadow);
         }
-
         &.show ~ &__overlay {
             visibility: visible;
             opacity: 1;
@@ -120,7 +125,6 @@
         @include abstracts.breakpoint(lg) {
             flex-direction: column;
             align-items: flex-start;
-
             overflow-y: auto;
             overscroll-behavior: contain;
             height: calc(100% - 40px);
@@ -143,9 +147,6 @@
         @include abstracts.breakpoint(lg) {
             width: 100%;
 
-            &:hover .dropdown {
-                display: none;
-            }
 
             &--active .dropdown {
                 display: block !important;
@@ -244,7 +245,6 @@
         font-weight: 500;
         line-height: 146.667%;
     }
-
     &__separate {
         width: 1px;
         height: 30px;
