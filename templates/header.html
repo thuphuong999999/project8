@@ -1,7 +1,7 @@
 <div class="container">
     <div class="top-bar">
         <!-- more -->
-        <button class="top-bar__more js-toggle" toggle-target="#navbar">
+        <button class="top-bar__more d-none d-lg-block js-toggle" toggle-target="#navbar">
             <img src="./assets/icons/more.svg" alt="more" class="icon top-bar__more-icon">
         </button>
         <!-- logo -->
@@ -12,11 +12,23 @@
             </h1>
         </div>
         <!-- navbar -->
-        <nav id="navbar" class="navbar show">
+        <nav id="navbar" class="navbar hide">
             <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
                 <img src="./assets/icons/arrow-left.svg" alt="btn">
             </button>
-            <ul class="js-dropdown-list navbar__list">
+
+            <a href="#!" class="nav-btn d-none d-md-flex">
+                <img src="../assets/icons/buy.svg" alt="" class="nav-btn__icon icon">
+                <span class="nav-btn__title">Card</span>
+                <span class="nav-btn__qnt">3</span>
+            </a>
+
+            <a href="#!" class="nav-btn d-none d-md-flex">
+                <img src="../assets/icons/heart.svg" alt="" class="nav-btn__icon icon">
+                <span class="nav-btn__title">Favorite</span>
+                <span class="nav-btn__qnt">3</span>
+            </a>
+            <ul class="navbar__list js-dropdown-list">
                 <li class="navbar__item">
                     <a href="#!" class="navbar__link ">Departments
                         <img src="./assets/icons/arrow-down.svg" alt="" class=" icon navbar__arrow">
@@ -210,6 +222,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
                                                         <div class="sub-menu__column">
                                                             <!-- Menu column 1 -->
                                                             <div class="menu-column">
